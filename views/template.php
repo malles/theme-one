@@ -4,6 +4,9 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#107c9e">
+        <meta name="msapplication-navbutton-color" content="#107c9e">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#107c9e">
         <?= $view->render('head') ?>
         <?php $view->style('theme', 'theme:css/theme.css') ?>
         <?php $view->script('theme', 'theme:js/theme.js', ['uikit-sticky',  'uikit-lightbox',  'uikit-parallax']) ?>
@@ -44,6 +47,18 @@
         </div>
         <?php endif ?>
 
+        <?php if ($view->position()->exists('top-top')) : ?>
+            <div id="tm-top-top" class="tm-top-top uk-block <?= $params['top_style'] ?>">
+                <div class="uk-container uk-container-center">
+
+                    <section class="uk-grid uk-grid-match" data-uk-grid-margin>
+                        <?= $view->position('top-top', 'position-grid.php') ?>
+                    </section>
+
+                </div>
+            </div>
+        <?php endif; ?>
+
         <?php if ($view->position()->exists('hero')) : ?>
         <div id="tm-hero" class="tm-hero uk-block uk-block-large uk-cover-background uk-flex uk-flex-middle <?= $params['classes.hero'] ?>" <?= $params['hero_image'] ? "style=\"background-image: url('{$view->url($params['hero_image'])}');\"" : '' ?> <?= $params['classes.parallax'] ?>>
             <div class="uk-container uk-container-center">
@@ -68,6 +83,7 @@
         </div>
         <?php endif; ?>
 
+        <?php if (empty($params['hide_system_output'])) : ?>
         <div id="tm-main" class="tm-main uk-block <?= $params['main_style'] ?>">
             <div class="uk-container uk-container-center">
 
@@ -87,6 +103,7 @@
 
             </div>
         </div>
+        <?php endif; ?>
 
         <?php if ($view->position()->exists('bottom')) : ?>
         <div id="tm-bottom" class="tm-bottom uk-block <?= $params['bottom_style'] ?>">

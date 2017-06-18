@@ -21,6 +21,7 @@ return [
 
         'navbar' => 'Navbar',
         'hero' => 'Hero',
+        'top-top' => 'Top-top',
         'top' => 'Top',
         'sidebar' => 'Sidebar',
         'bottom' => 'Bottom',
@@ -38,6 +39,7 @@ return [
         'title_large' => false,
         'alignment' => '',
         'html_class' => '',
+        'hide_system_output' => false,
         'sidebar_first' => false,
         'hero_image' => '',
         'hero_viewport' => '',
@@ -152,6 +154,10 @@ return [
 
             if ($params['hero_contrast'] && $params['hero_image']) {
                 $classes['hero'] .= ' uk-contrast';
+            }
+
+            if (stripos($params['html_class'], 'jm-full-width') !== false) {
+                $classes['hero'] .= ' uk-hidden-small';
             }
 
             $classes['sticky'] = 'data-uk-sticky=\''.json_encode($sticky).'\'';

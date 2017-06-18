@@ -1,7 +1,7 @@
 {
   "name": "theme-one",
   "dependencies": {
-    "uikit": "#master"
+    "uikit": "^2.24"
   },
   "private": true
 }

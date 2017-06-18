@@ -1,0 +1,134 @@
+
+@import "chosen.less";
+
+
+@base-heading-color: #107c9e;
+
+@button-primary-background: rgba(33,156,202,1);
+@button-success-background: rgba(116,186,66,1);
+
+.hook-button() {
+  border-radius:2px;
+}
+
+.hook-button-primary() {
+  background: linear-gradient(45deg, rgba(33,156,202,1) 0%, rgba(0,106,141,1) 100%);
+}
+
+.hook-button-success() {
+  background: linear-gradient(to right, rgba(116,186,66,1) 0%, rgba(88,148,46,1) 100%);
+}
+
+
+@navbar-link-color: #000;
+
+
+@utility-container-large-width: 960px;
+@utility-container-large-max-width: 1200px;
+
+@navbar-nav-padding-horizontal: 20px;
+
+.hook-navbar-misc() {
+  @media (max-width: @breakpoint-xlarge) {
+    .uk-navbar-nav > li > a {
+      padding: 0 15px;
+    }
+  }
+}
+
+@article-title-text-transform: uppercase;
+@article-title-font-size: 38px;
+@article-title-line-height: 48px;
+
+.hook-article-title() {
+  letter-spacing: -3px;
+}
+
+@block-padding-vertical-large:   @block-padding-vertical;
+
+@pagination-disabled-color: #e8e8e8;
+
+.hook-pagination-misc() {
+  .uk-pagination > .uk-disabled > a, .uk-pagination > .uk-disabled > a:hover {
+    background-color: @pagination-disabled-background;
+    color: @pagination-disabled-color;
+    cursor: default;
+  }
+}
+
+//add container large
+.hook-utility-misc() {
+  @media (min-width: @breakpoint-medium-max) {
+    .uk-container-large {
+      max-width: 1200px;
+    }
+  }
+  @media (min-width: @breakpoint-xlarge) {
+    .uk-container-large {
+      max-width: 1600px;
+    }
+  }
+}
+
+//full width
+.jm-full-width {
+  #tm-main > .uk-container {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+//mobile only
+@media (max-width: @breakpoint-small-max) {
+  .jm-map > div {
+    max-height: 80vh;
+    min-height: 80vh !important;
+  }
+  .tm-logo {
+    max-width: 65vw;
+  }
+}
+
+//fp header block
+.tm-hero {
+  padding: 80px 20px;
+}
+
+//kaart styling
+.jm-joblist {
+
+  .uk-panel-title {
+    margin-bottom: @utility-margin-small;
+    padding-bottom:0;
+  }
+
+  .uk-panel-box {
+    padding: 15px;
+
+    img {
+      max-height: 25px;
+      width: auto;
+    }
+  }
+
+
+}
+
+.jm-filters{
+  background: linear-gradient(45deg, rgba(33,156,202,1) 0%, rgba(0,106,141,1) 100%);
+}
+
+.jm-g-autocomplete {
+  position: relative;
+  a {
+    position: absolute;
+    right: 13px;
+    top: ~"calc(50% - 13px)";
+  }
+}
+
+
+.tm-bottom{
+  padding:50px
+}
+

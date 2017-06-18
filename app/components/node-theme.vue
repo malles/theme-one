@@ -33,6 +33,13 @@
         </div>
 
         <div class="uk-form-row">
+            <span class="uk-form-label">{{ 'Hide system output' | trans }}</span>
+            <div class="uk-form-controls uk-form-controls-text">
+                <label><input type="checkbox" v-model="node.theme.hide_system_output"> {{ 'Do not show the main content' | trans }}</label>
+            </div>
+        </div>
+
+        <div class="uk-form-row">
             <span class="uk-form-label">{{ 'Sidebar' | trans }}</span>
             <div class="uk-form-controls uk-form-controls-text">
                 <label><input type="checkbox" v-model="node.theme.sidebar_first"> {{ 'Show the sidebar before the content.' | trans }}</label>
@@ -65,6 +72,7 @@
                 <select id="form-top-style" class="uk-form-width-large" v-model="node.theme.top_style">
                     <option value="uk-block-default">{{ 'Default' | trans }}</option>
                     <option value="uk-block-muted">{{ 'Muted' | trans }}</option>
+                    <option value="uk-block-default uk-padding-top-remove">{{ 'No padding' | trans }}</option>
                 </select>
             </div>
         </div>
@@ -75,6 +83,7 @@
                 <select id="form-main-style" class="uk-form-width-large" v-model="node.theme.main_style">
                     <option value="uk-block-default">{{ 'Default' | trans }}</option>
                     <option value="uk-block-muted">{{ 'Muted' | trans }}</option>
+                    <option value="uk-block-default uk-padding-top-remove">{{ 'No padding' | trans }}</option>
                 </select>
             </div>
         </div>
@@ -85,6 +94,7 @@
                 <select id="form-bottom-style" class="uk-form-width-large" v-model="node.theme.bottom_style">
                     <option value="uk-block-default">{{ 'Default' | trans }}</option>
                     <option value="uk-block-muted">{{ 'Muted' | trans }}</option>
+                    <option value="uk-block-default uk-padding-top-remove">{{ 'No padding' | trans }}</option>
                 </select>
                 <p class="uk-form-help-block uk-margin">{{ 'Note: Position settings only work if you publish a widget in that position.' | trans }}</p>
             </div>
