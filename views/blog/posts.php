@@ -1,6 +1,6 @@
 <?php $view->script('posts', 'blog:app/bundle/posts.js', 'vue') ?>
 
-<article class="tm-container-small">
+<div class="tm-container-small">
 
     <?php foreach ($posts as $post) : ?>
     <article class="uk-article">
@@ -12,13 +12,13 @@
         <h1 class="uk-article-title"><a href="<?= $view->url('@blog/id', ['id' => $post->id]) ?>"><?= $post->title ?></a></h1>
 
         <p class="uk-article-meta">
-            <?= __('Written by %name% on %date%', ['%name%' => $post->user->name, '%date%' => '<time datetime="'.$post->date->format(\DateTime::ISO8601).'" v-cloak>{{ "'.$post->date->format(\DateTime::ISO8601).'" | date "longDate" }}</time>' ]) ?>
+            <?= __('Written by %name% on %date%', ['%name%' => $post->user->name, '%date%' => '<time datetime="'.$post->date->format(\DateTime::W3C).'" v-cloak>{{ "'.$post->date->format(\DateTime::W3C).'" | date "longDate" }}</time>' ]) ?>
         </p>
 
         <div class="uk-margin"><?= $post->excerpt ?: $post->content ?></div>
 
         <div class="uk-margin-large-top">
-            <ul class="uk-subnav">
+            <ul class="uk-subnav uk-margin-bottom-remove">
 
                 <?php if (isset($post->readmore) && $post->readmore || $post->excerpt) : ?>
                 <li><a href="<?= $view->url('@blog/id', ['id' => $post->id]) ?>"><?= __('Read more') ?></a></li>

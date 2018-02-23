@@ -6,6 +6,11 @@
 @contrast-color:                                 @global-contrast-color;
 @contrast-inverted-color:                        #333;
 
+@contrast-tab-hover-background:                  none;
+@contrast-tab-hover-color:                       @contrast-color;
+@contrast-tab-active-background:                 none;
+@contrast-tab-active-color:                      @contrast-color;
+
 @contrast-button-color:                          @contrast-color;
 @contrast-button-background:                     rgba(0,0,0,0);
 @contrast-button-hover-color:                    @global-dark-color;
@@ -51,6 +56,14 @@
 .hook-contrast-subnav-pill-active() {}
 
 
+// Tab
+// ========================================================================
+
+.hook-contrast-tab() {}
+.hook-contrast-tab-hover() {}
+.hook-contrast-tab-active() {}
+
+
 // List
 // ========================================================================
 
@@ -73,12 +86,18 @@
 
 }
 
-.hook-contrast-button-hover() { border-color: @contrast-button-hover-border; }
+.hook-contrast-button-hover() {
+
+    &:not(.uk-button-primary) { border-color: @contrast-button-hover-border; }
+
+}
+
 .hook-contrast-button-active() {}
 .hook-contrast-button-primary() {}
 
 .hook-contrast-button-primary-hover() {}
 .hook-contrast-button-primary-active() {}
+
 
 // Icon
 // ========================================================================
