@@ -23,6 +23,7 @@ return [
         'hero' => 'Hero',
         'top-top' => 'Top-top',
         'top' => 'Top',
+        'top2' => 'Top 2',
         'sidebar' => 'Sidebar',
         'bottom' => 'Bottom',
         'footer' => 'Footer',
@@ -99,6 +100,17 @@ return [
         },
 
         /**
+         * Set traditional meta-description
+         */
+        'view.meta' => function ($event, $meta) use ($app) {
+            $config = $app->config('system/site');
+            $meta([
+                'og:type' => 'website',
+                'description' => $config->get('meta.description'),
+            ]);
+        },
+
+        /**
          * Custom markup calculations based on theme settings
          */
         'view.layout' => function ($event, $view) use ($app) {
@@ -160,7 +172,7 @@ return [
                 $classes['hero'] .= ' uk-hidden-small';
             }
 
-            $classes['sticky'] = 'data-uk-sticky=\''.json_encode($sticky).'\'';
+            $classes['sticky'] = '';//'data-uk-sticky=\''.json_encode($sticky).'\'';
 
             $params['classes'] = $classes;
         },

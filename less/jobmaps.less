@@ -7,6 +7,9 @@
 @button-primary-background: rgba(33,156,202,1);
 @button-success-background: rgba(116,186,66,1);
 
+@panel-box-background: #f9f9f9;
+@panel-box-secondary-background: #f1f1f1;
+
 .hook-button() {
   border-radius:2px;
 }
@@ -93,9 +96,15 @@
 .tm-hero {
   padding: 80px 20px;
 }
+.hero-align-right .tm-hero {
+  background-position: 100% 50%;
+}
 
 //kaart styling
 .jm-joblist {
+
+  height: 550px;
+  overflow-y: scroll;
 
   .uk-panel-title {
     margin-bottom: @utility-margin-small;

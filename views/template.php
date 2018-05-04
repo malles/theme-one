@@ -83,6 +83,18 @@
         </div>
         <?php endif; ?>
 
+        <?php if ($view->position()->exists('top2')) : ?>
+        <div id="tm-top2" class="tm-top uk-block <?= $params['bottom_style'] ?>">
+            <div class="uk-container uk-container-center">
+
+                <section class="uk-grid uk-grid-match" data-uk-grid-margin>
+                    <?= $view->position('top2', 'position-grid.php') ?>
+                </section>
+
+            </div>
+        </div>
+        <?php endif; ?>
+
         <?php if (empty($params['hide_system_output'])) : ?>
         <div id="tm-main" class="tm-main uk-block <?= $params['main_style'] ?>">
             <div class="uk-container uk-container-center">
